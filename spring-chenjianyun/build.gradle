@@ -1,0 +1,18 @@
+plugins {
+    id 'java'
+}
+
+group 'com.koral'
+version '5.3.3'
+
+repositories {
+    mavenLocal()
+    maven { url 'https://maven.aliyun.com/nexus/content/groups/public/' }
+    maven { url 'https://maven.aliyun.com/nexus/content/repositories/jcenter'}
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    implementation(project(":spring-context"))
+}
