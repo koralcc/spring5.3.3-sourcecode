@@ -1,34 +1,33 @@
-# <img src="src/docs/spring-framework.png" width="80" height="80"> Spring Framework [![Build Status](https://ci.spring.io/api/v1/teams/spring-framework/pipelines/spring-framework-5.3.x/jobs/build/badge)](https://ci.spring.io/teams/spring-framework/pipelines/spring-framework-5.3.x?groups=Build") [![Revved up by Gradle Enterprise](https://img.shields.io/badge/Revved%20up%20by-Gradle%20Enterprise-06A0CE?logo=Gradle&labelColor=02303A)](https://ge.spring.io/scans?search.rootProjectNames=spring)
+# <img src="src/docs/spring-framework.png" width="80" height="80"> Spring Framework 5.3.3 [![Build Status](https://ci.spring.io/api/v1/teams/spring-framework/pipelines/spring-framework-5.3.x/jobs/build/badge)](https://ci.spring.io/teams/spring-framework/pipelines/spring-framework-5.3.x?groups=Build") [![Revved up by Gradle Enterprise](https://img.shields.io/badge/Revved%20up%20by-Gradle%20Enterprise-06A0CE?logo=Gradle&labelColor=02303A)](https://ge.spring.io/scans?search.rootProjectNames=spring)
 
-This is the home of the Spring Framework: the foundation for all [Spring projects](https://spring.io/projects). Collectively the Spring Framework and the family of Spring projects are often referred to simply as "Spring". 
+本项目纯粹用于Spring 5.3.3源码调试学习使用
 
-Spring provides everything required beyond the Java programming language for creating enterprise applications for a wide range of scenarios and architectures. Please read the [Overview](https://docs.spring.io/spring/docs/current/spring-framework-reference/overview.html#spring-introduction) section as reference for a more complete introduction.
+## ## gradle 构建Spring源代码
 
-## Code of Conduct
+ Spring源码下载 ： <a href="https://github.com/spring-projects/spring-framework" title="spring-framwork">spring-framwork</a>
 
-This project is governed by the [Spring Code of Conduct](CODE_OF_CONDUCT.adoc). By participating, you are expected to uphold this code of conduct. Please report unacceptable behavior to spring-code-of-conduct@pivotal.io.
+1. spring用的5.3.3,里面会有一个下载的gradle版本（6.7.1），建议自己下载的gradle版本与之一致，不然会有很多问题；
 
-## Access to Binaries
+   ![image-20220811230059373](C:\Users\37650\AppData\Roaming\Typora\typora-user-images\image-20220811230059373.png)
 
-For access to artifacts or a distribution zip, see the [Spring Framework Artifacts](https://github.com/spring-projects/spring-framework/wiki/Spring-Framework-Artifacts) wiki page.
+2. 根据 gradle/gradle-wrapper 查看gradle版本
 
-## Documentation
+3. spring源文件，设置build.gradle 的maven阿里云仓库
 
-The Spring Framework maintains reference documentation ([published](https://docs.spring.io/spring-framework/docs/current/spring-framework-reference/) and [source](src/docs/asciidoc)), Github [wiki pages](https://github.com/spring-projects/spring-framework/wiki), and an
-[API reference](https://docs.spring.io/spring-framework/docs/current/javadoc-api/). There are also [guides and tutorials](https://spring.io/guides) across Spring projects.
+   ```
+   maven { url 'https://maven.aliyun.com/nexus/content/groups/public/' }
+   maven { url 'https://maven.aliyun.com/nexus/content/repositories/jcenter'}
+   ```
 
-## Micro-Benchmarks
+   ![image-20220811230234584](C:\Users\37650\AppData\Roaming\Typora\typora-user-images\image-20220811230234584.png)
 
-See the [Micro-Benchmarks](https://github.com/spring-projects/spring-framework/wiki/Micro-Benchmarks) Wiki page.
+4. spring源文件，修改setting-gradle的maven阿里云仓库
 
-## Build from Source
+   ```
+   maven { url "https://maven.aliyun.com/repository/public" }
+   ```
 
-See the [Build from Source](https://github.com/spring-projects/spring-framework/wiki/Build-from-Source) Wiki page and the [CONTRIBUTING.md](CONTRIBUTING.md) file.
+   ![image-20220811230339264](C:\Users\37650\AppData\Roaming\Typora\typora-user-images\image-20220811230339264.png)
 
-## Stay in Touch
+5. 用idea打开，并选择jdk11
 
-Follow [@SpringCentral](https://twitter.com/springcentral), [@SpringFramework](https://twitter.com/springframework), and its [team members](https://twitter.com/springframework/lists/team/members) on Twitter. In-depth articles can be found at [The Spring Blog](https://spring.io/blog/), and releases are announced via our [news feed](https://spring.io/blog/category/news).
-
-## License
-
-The Spring Framework is released under version 2.0 of the [Apache License](https://www.apache.org/licenses/LICENSE-2.0).
