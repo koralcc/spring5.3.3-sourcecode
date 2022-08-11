@@ -1,14 +1,23 @@
 package com.koral.spring.repository;
 
+import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.BeanFactory;
+import org.springframework.beans.factory.BeanFactoryAware;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationContextAware;
+
 /**
  * spring
  *
  * @author koral
  * @date 2022/8/10 15:23
  */
-public class Teacher {
-	public String name;
-	public Integer age;
+public class Teacher implements ApplicationContextAware, BeanFactoryAware {
+	private String name;
+	private Integer age;
+
+	private ApplicationContext applicationContext;
+	private BeanFactory beanFactory;
 
 	public void setName(String name) {
 		this.name = name;
@@ -24,5 +33,16 @@ public class Teacher {
 
 	public Integer getAge() {
 		return age;
+	}
+
+	@Override
+	public void setBeanFactory(BeanFactory beanFactory) throws BeansException {
+		this.beanFactory = beanFactory;
+
+	}
+
+	@Override
+	public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
+		this.applicationContext = applicationContext;
 	}
 }

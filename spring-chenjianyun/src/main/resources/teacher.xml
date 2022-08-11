@@ -6,6 +6,6 @@
 	<context:property-placeholder location="classpath:db-configure.properties"></context:property-placeholder>
 	<bean class="com.koral.spring.repository.Teacher" id="teacher">
 		<property name="name" value="${teacher.name}"></property>
-		<property name="age" value="${teacher.age}"></property>
+		<property name="age" value="19"></property>
 	</bean>
 </beans>

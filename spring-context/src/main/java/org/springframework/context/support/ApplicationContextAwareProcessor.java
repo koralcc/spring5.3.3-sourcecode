@@ -94,6 +94,7 @@ class ApplicationContextAwareProcessor implements BeanPostProcessor {
 
 		if (acc != null) {
 			AccessController.doPrivileged((PrivilegedAction<Object>) () -> {
+				// 检测bean上是否实现了某个aware接口，有的话进行相关调用
 				invokeAwareInterfaces(bean);
 				return null;
 			}, acc);
@@ -105,6 +106,10 @@ class ApplicationContextAwareProcessor implements BeanPostProcessor {
 		return bean;
 	}
 
+	/**
+	 * 如果某个bean实现了某个aware接口，给指定的bean设置相应的属性值
+	 * @param bean
+	 */
 	private void invokeAwareInterfaces(Object bean) {
 		if (bean instanceof EnvironmentAware) {
 			((EnvironmentAware) bean).setEnvironment(this.applicationContext.getEnvironment());
