@@ -334,6 +334,7 @@ public abstract class AbstractBeanFactory extends FactoryBeanRegistrySupport imp
 				// Create bean instance.
 				// 创建bean的实例对象
 				if (mbd.isSingleton()) {
+					// 返回以beanName的(原始)单例对象，如果尚未注册，则使用singletonFactory创建并注册一个对象
 					sharedInstance = getSingleton(beanName, () -> {
 						try {
 							// 为给定的合并后BeanDefinition（和参数）创建一个bean实例
@@ -343,6 +344,9 @@ public abstract class AbstractBeanFactory extends FactoryBeanRegistrySupport imp
 							// Explicitly remove instance from singleton cache: It might have been put there
 							// eagerly by the creation process, to allow for circular reference resolution.
 							// Also remove any beans that received a temporary reference to the bean.
+							// 显示地从单例缓存中删除实例；他可能是由创建过程急切地放在那里，以允许循环引用解析，还要删除
+							// 接收到该Bean临时引用的任何Bean
+							// 销毁给定的Bean，如果找到相应的一次性Bean实例，则委托给destoryBean
 							destroySingleton(beanName);
 							throw ex;
 						}
