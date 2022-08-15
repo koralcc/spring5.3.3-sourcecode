@@ -627,6 +627,7 @@ public abstract class AbstractAutowireCapableBeanFactory extends AbstractBeanFac
 						"' to allow for resolving potential circular references");
 			}
 			// 为避免后期循环依赖，可以在bean初始化完成前将创建实例的objectFactory加入工厂（很重要，三级缓存，解决循环依赖）
+			// 放入三级缓存
 			addSingletonFactory(beanName, () -> getEarlyBeanReference(beanName, mbd, bean));
 
 			// 只保留二级缓存，不向三级缓存中存放对象

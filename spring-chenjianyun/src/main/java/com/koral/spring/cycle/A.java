@@ -16,4 +16,8 @@ public class A {
 	public void setB(B b) {
 		this.b = b;
 	}
+
+	public void buySomeThing(){
+		System.out.println("买了雪糕");
+	}
 }

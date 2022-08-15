@@ -9,4 +9,6 @@
 		<property name="name" value="${teacher.name}"></property>
 		<property name="age" value="19"></property>
 	</bean>
+
+	<bean class="com.koral.spring.repository.MycustomBeanFactoryPostProcessor"></bean>
 </beans>

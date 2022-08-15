@@ -1,8 +1,5 @@
 package com.koral.spring.test;
 
-import com.koral.spring.cycle.Buyer;
-import com.koral.spring.repository.Teacher;
-import org.springframework.aop.support.AopUtils;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
