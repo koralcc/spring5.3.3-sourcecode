@@ -11,4 +11,5 @@
 	</bean>
 
 	<bean class="com.koral.spring.repository.MycustomBeanFactoryPostProcessor"></bean>
+	<bean class="com.koral.spring.repository.MyBeanDefitionRegisterPostProcessor"></bean>
 </beans>
